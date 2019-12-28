@@ -31,4 +31,9 @@ class Login extends CI_Controller {
 			$this->load->view('Login/index',$data);
 		}
 	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('login');
+	}
 }
