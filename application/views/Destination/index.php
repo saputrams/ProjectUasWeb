@@ -18,12 +18,6 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Start Page Content -->
@@ -38,7 +32,7 @@
                             <div class="el-card-avatar el-overlay-1"> <img src="<?php echo base_url()?>style/images<?php echo $row["destination_image"];?>" alt="user" />
                                 <div class="el-overlay">
                                     <ul class="list-style-none el-info">
-                                        <li class="el-item"><a class="btn default btn-outline el-link" href="javascript:void(0);"><i class="mdi mdi-link"></i></a></li>
+                                        <li class="el-item"><a class="btn default btn-outline el-link" href="<?php echo base_url().'index.php/'?>Destination/invoice?id=<?php echo $row["destination_schedule_id"];?>"><i class="mdi mdi-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,27 +45,14 @@
                 <?php } ?>
             
         </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
     <footer class="footer text-center">
         All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
     </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
 </div>
+
+<?php if(isset($message)){ ?>
+    <script>
+        toastr.success('Pesanan Berhasil. Silahkan Lihat Transaksi Anda Untuk Melihat Kode Booking', 'Pesanan Berhasil');
+    </script>
+<?php } ?>

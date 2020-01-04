@@ -17,7 +17,6 @@
     <script src="<?php echo base_url()?>style/extra-libs/multicheck/datatable-checkbox-init.js"></script>
     <script src="<?php echo base_url()?>style/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="<?php echo base_url()?>style/extra-libs/DataTables/datatables.min.js"></script>
-    <script src="<?php echo base_url()?>style/libs/toastr/build/toastr.min.js"></script>
     <script>
         $('#zero_config').DataTable();
     </script>

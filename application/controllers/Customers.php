@@ -27,7 +27,31 @@ class Customers extends CI_Controller {
 		return $row;
     }
     
+	public function editForm(){
+		$id = $this->input->get("id");
 
+		$data["row"] = $this->getMenu();
+        $data["customer"] = $this->customers_m->GetDataCustomersEdit($id);
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('customers/editForm',$data);
+		$this->load->view('shared/bottom');
+
+
+	}
+
+	public function edit(){
+		$address = $this->input->post("address");
+		$gender = $this->input->post("gender");
+		$phone = $this->input->post("phone");
+		$id = $this->input->post("id");
+
+		$this->customers_m->Edit($id,$address,$gender,$phone);
+
+		$this->index();
+	}
 
 
 }
