@@ -10,9 +10,8 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Dashboarrd</a></li>
                             <li class="breadcrumb-item"><a href="#">Data Anda</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </nav>
                 </div>

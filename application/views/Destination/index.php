@@ -10,8 +10,7 @@
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            <li class="breadcrumb-item active" aria-current="page">Destinasi</li>
                         </ol>
                     </nav>
                 </div>
@@ -30,11 +29,25 @@
                     <div class="card">
                         <div class="el-card-item">
                             <div class="el-card-avatar el-overlay-1"> <img src="<?php echo base_url()?>style/images<?php echo $row["destination_image"];?>" alt="user" />
+                                <?php if($row["isexpired"] == 0 && $row["is_close"] == 'N'){?>
                                 <div class="el-overlay">
                                     <ul class="list-style-none el-info">
-                                        <li class="el-item"><a class="btn default btn-outline el-link" href="<?php echo base_url().'index.php/'?>Destination/invoice?id=<?php echo $row["destination_schedule_id"];?>"><i class="mdi mdi-link"></i></a></li>
+                                        <li class="el-item">
+                                            <a class="btn default btn-outline el-link" href="<?php echo base_url().'index.php/'?>Destination/invoice?id=<?php echo $row["destination_schedule_id"];?>">
+                                                <i class="mdi mdi-link"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
+                                <?php }else{?>
+                                <div class="el-overlay">
+                                    <ul class="list-style-none el-info">
+                                        <li class="el-item">
+                                            Tidak Tersedia
+                                        </li>
+                                    </ul>
+                                </div>
+                                <?php }?>
                             </div>
                             <div class="el-card-content">
                                 <h4 class="m-b-0"><?php echo $row["destination_name"];?></h4> <span class="text-muted"><?php echo $row["time_start"];?> - <?php echo $row["time_end"];?></span>
