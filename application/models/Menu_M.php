@@ -44,5 +44,9 @@
             $this->db->where('menu_id', $id);
             $this->db->update('menu', $data);
         }
+
+        public function DeleteMenu($id){
+            $this->db->delete('menu', array('menu_id' => $id));
+        }
     }
 ?>

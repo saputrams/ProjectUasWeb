@@ -76,5 +76,61 @@ class Destination extends CI_Controller {
 		}
 	}
 
+	public function destinationList(){
+		$data["row"] = $this->getMenu();
+		$data["destination"] = $this->destination_m->GetDestination();
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationList',$data);
+		$this->load->view('shared/bottom');
+	}
+
+	public function destinationScheduleList(){
+		$id = $this->input->get("id");
+
+		$data["row"] = $this->getMenu();
+		$data["id"] = $id;
+		$data["destination"] = $this->destination_m->GetDestinationSchedule($id);
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationScheduleList',$data);
+		$this->load->view('shared/bottom');
+	}
+
+	public function addForm(){
+		$data["destination_id"] = $this->input->get("destination_id");
+		$data["row"] = $this->getMenu();
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationScheduleForm',$data);
+		$this->load->view('shared/bottom');
+	}
+
+	public function add(){
+		$destination_id = $this->input->post("destination_id");
+		$time_start = $this->input->post("mulai");
+		$time_end = $this->input->post("sampai");
+		$slot = $this->input->post("slot");
+		$last_register = $this->input->post("last");
+		$price = $this->input->post("harga");
+
+		$this->destination_m->AddDestination($destination_id,$time_start,$time_end,$slot,$last_register,$price);
+
+		$data["row"] = $this->getMenu();
+		$data["id"] = $destination_id;
+		$data["destination"] = $this->destination_m->GetDestinationSchedule($destination_id);
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationScheduleList',$data);
+		$this->load->view('shared/bottom');
+	}
 
 }

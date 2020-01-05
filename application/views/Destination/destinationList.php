@@ -19,22 +19,22 @@
             <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="<?php echo base_url().'index.php/'?>Menu/addForm" type="button" class="btn btn-primary btn-sm">Add</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Nama Menu</th>
-                                    <th>Action</th>
+                                    <th>Nama Destinasi</th>
+                                    <th>Alamat Destinasi</th>
+                                    <th>Jadwal</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach($dataMenu->result_array() as $row){?>
+                            <?php foreach($destination->result_array() as $row){?>
                                 <tr>
-                                    <td><?php echo $row["menu_name"]?></td>
+                                    <td><?php echo $row["destination_name"]?></td>
+                                    <td><?php echo $row["destination_address"]?></td>
                                     <td style="width:15%">
-                                        <a href="<?php echo base_url().'index.php/'?>Menu/editForm?id=<?php echo $row["menu_id"]?>"  type="button" class="btn btn-cyan btn-sm">Edit</a>
-                                        <a href="<?php echo base_url().'index.php/'?>Menu/delete?id=<?php echo $row["menu_id"]?>" data- type="button" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="<?php echo base_url().'index.php/'?>Destination/destinationScheduleList?id=<?php echo $row["destination_id"]?>"  type="button" class="btn btn-cyan btn-sm">Lihat Jadwal</a>
                                     </td>
                                 </tr>
                             <?php }?>

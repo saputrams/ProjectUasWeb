@@ -2,12 +2,11 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Tables</h4>
+                <h4 class="page-title">Transaksi</h4>
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Management Menu</a></li>
-                            <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+                            <li class="breadcrumb-item active" aria-current="page">Transaksi</li>
                         </ol>
                     </nav>
                 </div>
@@ -19,23 +18,27 @@
             <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="<?php echo base_url().'index.php/'?>Menu/addForm" type="button" class="btn btn-primary btn-sm">Add</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Nama Menu</th>
-                                    <th>Action</th>
+                                    <th>No Identitas</th>
+                                    <th>Nama Pelanggan</th>
+                                    <th>Alamat</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Nomor Telepon</th>
+                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach($dataMenu->result_array() as $row){?>
+                            <?php foreach($customer->result_array() as $row){?>
                                 <tr>
-                                    <td><?php echo $row["menu_name"]?></td>
-                                    <td style="width:15%">
-                                        <a href="<?php echo base_url().'index.php/'?>Menu/editForm?id=<?php echo $row["menu_id"]?>"  type="button" class="btn btn-cyan btn-sm">Edit</a>
-                                        <a href="<?php echo base_url().'index.php/'?>Menu/delete?id=<?php echo $row["menu_id"]?>" data- type="button" class="btn btn-danger btn-sm">Delete</a>
-                                    </td>
+                                    <td><?php echo $row["customer_identity"]?></td>
+                                    <td><?php echo $row["full_name"]?></td>
+                                    <td><?php echo $row["customer_address"]?></td>
+                                    <td><?php echo $row["customer_gender"]?></td>
+                                    <td><?php echo $row["customer_phone"]?></td>
+                                    <td><?php echo $row["email"]?></td>
                                 </tr>
                             <?php }?>
                             </tbody>

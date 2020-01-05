@@ -22,6 +22,7 @@
 
     <script src="<?php echo base_url()?>style/libs/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo base_url()?>style/libs/toastr/build/toastr.min.js"></script>
+    <script src="<?php echo base_url()?>style/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <body>
     <div class="preloader">
         <div class="lds-ripple">

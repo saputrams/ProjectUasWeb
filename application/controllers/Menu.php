@@ -59,6 +59,13 @@ class Menu extends CI_Controller {
 		$this->index();
 		
 	}
+
+	public function delete(){
+		$menuid = $this->input->get('id');
+		$this->menu_m->DeleteMenu($menuid);
+
+		$this->index();
+	}
 	public function editForm(){
 		$id = $this->input->get('id');
 		

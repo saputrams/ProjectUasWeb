@@ -53,5 +53,16 @@ class Customers extends CI_Controller {
 		$this->index();
 	}
 
+	public function listCustomers(){
+		$data["row"] = $this->getMenu();
+        $data["customer"] = $this->customers_m->GetListCustomer();
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('customers/listCustomers',$data);
+		$this->load->view('shared/bottom');
+	}
+
 
 }
