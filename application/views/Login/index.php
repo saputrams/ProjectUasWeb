@@ -24,7 +24,7 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><h2>Travel</h2></span>
+                        <span class="db"><img src="<?php echo base_url()?>style/images/logo-text.png" alt="homepage" class="light-logo" /></span>
                     </div>
                     <!-- Form -->
                     <form class="form-horizontal m-t-20" id="loginform" method="post" action="<?php echo base_url().'index.php/'?>Login/checkLogin">
