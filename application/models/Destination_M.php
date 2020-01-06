@@ -58,5 +58,10 @@
             );
             $this->db->insert('destination_schedule', $data);
         }
+
+        public function tambahdata($destination_name,$destination_image,$destination_address,$destination_description){
+            $data = array('destination_name' => $destination_name, 'destination_image' => $destination_image, 'destination_address' => $destination_address, 'destination_description' => $destination_description);
+            $this->db->insert('destination', $data);
+        }
     }
 ?>

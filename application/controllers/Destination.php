@@ -133,4 +133,35 @@ class Destination extends CI_Controller {
 		$this->load->view('shared/bottom');
 	}
 
+	public function destinationAdd()
+	{
+        $data["row"] = $this->getMenu();
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationAdd',$data);
+		$this->load->view('shared/bottom');
+	}
+
+	public function destinationAdddd()
+	{
+
+		$destination_name = $this->input->post("destination_name");
+		$destination_image = $this->input->post("destination_image");
+		$destination_address = $this->input->post("destination_address");
+		$destination_description = $this->input->post("destination_description");
+		
+
+        $data["row"] = $this->getMenu();
+		//redirect('/login/index');
+		$this->load->view('shared/top');
+		$this->load->view('shared/header');
+		$this->load->view('shared/menu',$data);
+		$this->load->view('destination/destinationAdd',$data);
+		$this->load->view('shared/bottom');
+
+		$this->destination_m->tambahdata($destination_name,$destination_image,$destination_address,$destination_description);
+	}
+
 }
